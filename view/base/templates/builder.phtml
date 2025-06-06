@@ -1,0 +1,103 @@
+<?php
+$config            = $this->getBuilderConfig();
+$id                = $this->getHtmlId();
+$targetId          = $this->getTargetId();
+$additionalClasses = $this->getAdditionalClasses();
+$url               = $this->getUrl('mgzpagebuilder/product/wysiwyg');
+?>
+<div class="mgz-builder <?= $additionalClasses ?>" id="<?= $id ?>" ng-controller="cytraconBuilderCtrl">
+	<cytracon-builder profile="profile"></cytracon-builder>
+</div>
+<style id="<?= $targetId ?>-styles"></style>
+<script type="text/javascript">
+	window.cytraconBuilder = {
+		viewFileUrl: '<?= $this->getBuilderViewFileUrl() ?>'
+	}
+	require([
+		'jquery',
+		'angular',
+		'cytraconBuilder',
+		'api-check'
+		<?= $this->getModulePaths() ?>
+	], function($, angular, mgzBuilder, apiCheck) {
+		var parent = $('#<?= $targetId ?>').closest('.admin__field');
+		if (parent.parent().hasClass('admin__field-control')) {
+			parent.parent().addClass('cytracon-builder-active-wrapper');
+			var width = parent.parent().parent().width() * .72;
+			parent.parent().width(width);
+			$('#<?= $id ?>').width(width);
+		}
+		apiCheck.globalConfig.disabled = true;
+		var builderConfig = <?= $this->getSerializedBuilderConfig() ?>;
+		window.builderConfig = builderConfig;
+		var app = angular.module('<?= $id ?>', ['cytraconBuilder' <?= $this->getModuleKeys() ?>], function config(cytraconBuilderConfigProvider, formlyConfigProvider) {
+			formlyConfigProvider.disableWarnings = true;
+			formlyConfigProvider.extras.removeChromeAutoComplete = true;
+  			formlyConfigProvider.extras.explicitAsync = true;
+			_.each(builderConfig.groups, function(elem) {
+				cytraconBuilderConfigProvider.registerGroup(elem.type, elem);
+			});
+			_.each(builderConfig.elements, function(elem) {
+				cytraconBuilderConfigProvider.registerElement(elem.type, elem);
+			});
+			cytraconBuilderConfigProvider.processAllowTypes();
+			_.each(builderConfig.directives, function(directive, name) {
+				cytraconBuilderConfigProvider.registerDirectives(name, directive);
+			});
+		}).run(['$rootScope', '$log', '$window', 'cytraconBuilderService', 'cytraconBuilderUrl', 'cytraconBuilderConfig', 'elementManager', 'cytraconBuilderModal', 'formlyConfig', '$sce', function($rootScope, $log, $window, cytraconBuilderService, cytraconBuilderUrl, cytraconBuilderConfig, elementManager, cytraconBuilderModal, formlyConfig, $sce, historyManager) {
+			formlyConfig.disableWarnings     = true;
+			elementManager.registerElements(cytraconBuilderConfig.elements);
+			elementManager.groups            = cytraconBuilderConfig.groups;
+			$rootScope.profile               = {
+				elements: []
+			};
+			$rootScope.ajaxData              = {};
+			$rootScope.additionalClasses     = [];
+			$rootScope.cytraconBuilderService = cytraconBuilderService;
+			$rootScope.cytraconBuilderUrl     = cytraconBuilderUrl;
+			$rootScope.elementManager        = elementManager;
+			$rootScope.historyManager        = historyManager;
+			$rootScope.$log                  = $log;
+			$rootScope.currentProfile        = {};
+			$rootScope.$window               = $window;
+			$rootScope.parseInt              = parseInt;
+			$rootScope.parseFloat            = parseFloat;
+			$rootScope.builderConfig         = builderConfig;
+			$rootScope.$sce                  = $sce;
+			$rootScope.rootId                = '<?= $id ?>-wrapper';
+			$rootScope.fullscreen            = false;
+			$rootScope.history               = [];
+			cytraconBuilderModal.registerModals(builderConfig.modals);
+			$rootScope.cytraconBuilderModal = cytraconBuilderModal;
+		}]);
+		app.config(['$compileProvider', '$httpProvider', function($compileProvider, $httpProvider) {
+			$compileProvider.commentDirectivesEnabled(false);
+			$compileProvider.cssClassDirectivesEnabled(false);
+			$compileProvider.debugInfoEnabled(false);
+			$httpProvider.useApplyAsync(1000);
+			$httpProvider.useLegacyPromiseExtensions = false;
+		}]);
+		app.controller('cytraconBuilderCtrl', ['$scope', '$rootScope', '$timeout', function($scope, $rootScope, $timeout) {
+			var parent = $('#<?= $targetId ?>').closest('.admin__field');
+			parent.addClass('mgz-builder-wrapper');
+			parent.addClass('<?= $id ?>-wrapper');
+			if (parent.parent().hasClass('admin__control-grouped')) {
+				parent.parent().addClass('mgz-builder-grouped-wrapper');
+			}
+		}]);
+		<?php
+			if (isset($config['controllers'])) {
+				foreach ($config['controllers'] as $key => $path) { ?>
+					require(['<?= $path ?>'], function(_controller) {
+						app.controller('<?= $key ?>', _controller);
+					});
+				<?php }
+			}
+		?>
+		require(['domReady!'], function (document) {
+			angular.bootstrap(document.getElementById('<?= $id ?>'), ['<?= $id ?>'], {
+				//strictDi: true
+			});
+		});
+	});
+</script>

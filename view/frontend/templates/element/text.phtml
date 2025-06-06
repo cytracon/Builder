@@ -1,0 +1,11 @@
+<?php
+/**
+ * @var $block \Cytracon\Builder\Block\Element
+ */
+?>
+<?php
+$coreHelper = $this->helper('\Cytracon\Core\Helper\Data');
+$element    = $this->getElement();
+$content    = $coreHelper->filter(str_replace('<p></p>', '<br/>', $element->getData('content')));
+?>
+<?= $content ?>
