@@ -147,7 +147,7 @@ button.mgz-btn {
 }
 .mgz-icon,
 .tabs-opener:before {
-    font-family: "Magezon-Icons" !important;
+    font-family: "Cytracon-Icons" !important;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -2075,7 +2075,7 @@ button.mgz-btn {
     display: table;
     clear: both;
 }
-.magezon-builder-preload .mgz-element {
+.cytracon-builder-preload .mgz-element {
     z-index: 0;
 }
 .mgz-child:not(:last-child) > .mgz-element-inner {
@@ -2526,12 +2526,12 @@ button.mgz-btn {
 }
 .page-layout-1column-fullwidth
     .column
-    > .magezon-builder
+    > .cytracon-builder
     > .full_width_row
     > .mgz-element-inner,
 .page-layout-1column-fullwidth
     .column
-    > .magezon-builder
+    > .cytracon-builder
     > .full_width_row_content
     > .mgz-element-inner {
     padding-left: 10px;
@@ -3375,7 +3375,7 @@ button.mgz-btn {
 .mgz-element-newsletter_form .newsletter-description {
     margin-bottom: 10px;
 }
-.magezon-builder .block-search {
+.cytracon-builder .block-search {
     margin: 0;
     padding: 0;
     max-width: 100%;
@@ -3742,25 +3742,25 @@ button.mgz-btn {
 .mgz-product-listing .product-image-wrapper .product-image-photo {
     position: static;
 }
-.magezon-builder .mgz-element-sidebar .sidebar-main,
-.magezon-builder .mgz-element-sidebar .sidebar-additional {
+.cytracon-builder .mgz-element-sidebar .sidebar-main,
+.cytracon-builder .mgz-element-sidebar .sidebar-additional {
     width: 100%;
     padding: 0;
 }
-.magezon-builder .mgz-element-sidebar .filter-options-item {
+.cytracon-builder .mgz-element-sidebar .filter-options-item {
     width: 100%;
     border-bottom: 1px solid #cccccc;
 }
-.magezon-builder .mgz-element-sidebar .filter-options-title {
+.cytracon-builder .mgz-element-sidebar .filter-options-title {
     padding: 10px 40px 0 10px;
 }
 @media (min-width: 768px) {
-    .magezon-builder .mgz-element-sidebar .filter-options-item:before,
-    .magezon-builder .mgz-element-sidebar .filter-options-item:after {
+    .cytracon-builder .mgz-element-sidebar .filter-options-item:before,
+    .cytracon-builder .mgz-element-sidebar .filter-options-item:after {
         display: none !important;
         border: 0 !important;
     }
-    .magezon-builder .mgz-element-sidebar .filter-options-content {
+    .cytracon-builder .mgz-element-sidebar .filter-options-content {
         position: static;
         border: 0;
         -webkit-box-shadow: none;
@@ -3919,27 +3919,27 @@ button.mgz-btn {
 .page-layout-1column-fullwidth {
     overflow-x: hidden;
 }
-.magezon-builder {
+.cytracon-builder {
     position: relative;
     z-index: 2;
 }
-.magezon-builder:before,
-.magezon-builder:after {
+.cytracon-builder:before,
+.cytracon-builder:after {
     content: " ";
     display: table;
     clear: both;
 }
-.magezon-builder * {
+.cytracon-builder * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.magezon-builder iframe,
-.magezon-builder video,
-.magezon-builder img {
+.cytracon-builder iframe,
+.cytracon-builder video,
+.cytracon-builder img {
     max-width: 100%;
 }
-.magezon-builder p {
+.cytracon-builder p {
     margin-top: 0;
 }
 .mgz-block-heading {
@@ -3999,7 +3999,7 @@ button.mgz-btn {
 .mgz_fit {
     width: 1%;
 }
-.magezon-builder-btn {
+.cytracon-builder-btn {
     background: #007dbd;
     border-color: #007dbd;
     color: #fff;
@@ -4011,12 +4011,12 @@ button.mgz-btn {
     display: inline-block;
     margin-bottom: 10px;
 }
-.magezon-builder-btn:hover {
+.cytracon-builder-btn:hover {
     color: #fff;
     text-decoration: none;
     background: #0073ae;
 }
-.magezon-builder-btn i {
+.cytracon-builder-btn i {
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -4027,7 +4027,7 @@ button.mgz-btn {
     position: absolute;
     left: 15px;
 }
-table .magezon-builder .mgz-container {
+table .cytracon-builder .mgz-container {
     width: 100%;
 }
 .mgz-condition-html .rule-tree ul {
@@ -4036,7 +4036,7 @@ table .magezon-builder .mgz-container {
 .mgz-builder-single_image-icon {
     background-image: url("../images/icons/element-icon-single-image.svg") !important;
 }
-.item.product .magezon-builder .mgz-container {
+.item.product .cytracon-builder .mgz-container {
     width: 100%;
 }
 .mgz-builder-wrapper._disabled > .admin__field-control > button,

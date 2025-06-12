@@ -6,7 +6,7 @@
        <div class="mgz-elements-wrapper">
            <ul>
 				<li ng-repeat="element in tab.elements" class="mgz_element-{{ element.type }} mgz-gt-{{ element.type }} mgz-col-xs-12 mgz-col-sm-4 mgz-col-md-3 mgz-col-lg-2" data-position="{{ element.sortOrder }}">
-					<magezon-builder-modal-element element="element" ng-click="mgz.addElement(element)" class="mgz-gt-{{ element.type }}"></magezon-builder-modal-element>
+					<cytracon-builder-modal-element element="element" ng-click="mgz.addElement(element)" class="mgz-gt-{{ element.type }}"></cytracon-builder-modal-element>
 				</li>
 			</ul>
             <div ng-if="!!$root.builderConfig.elementsModalPrefix" ng-bind-html="$root.builderConfig.elementsModalPrefix"></div>

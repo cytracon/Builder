@@ -15,9 +15,9 @@
 		<span class="ng-btn-content"><i class="mgz-icon mgz-icon-dragndrop"></i> {{ _bElem.name }}</span>
 	</a>
 	<div class="mgz-element-control-dropdown" ng-if="listVisible">
-		<ul magezon-builder-directive-list group="elemControl" tag="{{ element.type }}-elemControl" html-tag="li" element="elem"></ul>
+		<ul cytracon-builder-directive-list group="elemControl" tag="{{ element.type }}-elemControl" html-tag="li" element="elem"></ul>
 	</div>
-	<ul class="mgz-element-control-top" ng-if="listVisible" magezon-builder-directive-list group="controlTop" html-tag="li" element="elem"></ul>
+	<ul class="mgz-element-control-top" ng-if="listVisible" cytracon-builder-directive-list group="controlTop" html-tag="li" element="elem"></ul>
 	<i class="mgz-icon mgz-icon-arrow_drop_right mgz-icon-separator" ng-if="!$last"></i>
 </div>
 <div ng-class="mgz.getControlClasses(elem, $lass)" 
@@ -35,9 +35,9 @@
 		<span class="ng-btn-content"><i class="mgz-icon mgz-icon-dragndrop"></i> {{ _bElem.name }}</span>
 	</a>
 	<div class="mgz-element-control-dropdown" ng-if="listVisible">
-		<ul magezon-builder-directive-list group="elemControl" tag="{{ element.type }}-elemControl" html-tag="li" element="element"></ul>
+		<ul cytracon-builder-directive-list group="elemControl" tag="{{ element.type }}-elemControl" html-tag="li" element="element"></ul>
 	</div>
-	<ul class="mgz-element-control-top" ng-if="listVisible" magezon-builder-directive-list group="controlTop" html-tag="li" element="element"></ul>
+	<ul class="mgz-element-control-top" ng-if="listVisible" cytracon-builder-directive-list group="controlTop" html-tag="li" element="element"></ul>
 </div>
 <div class="mgz-element-control mgz-element-control-green">
 	<a class="mgz-control-btn mgz-control-edit" title="Edit {{ element.builder.name }}"

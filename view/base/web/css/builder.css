@@ -135,7 +135,7 @@ button.mgz-btn {
 .mgz-builder .mgz-element-toolbar .mgz-element-toolbar-item-left,
 .mgz-builder .mgz-element-toolbar .mgz-element-toolbar-item-center,
 .mgz-builder .mgz-element-toolbar .mgz-element-toolbar-item-right {
-  font-family: 'Magezon-Icons' !important;
+  font-family: 'Cytracon-Icons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -803,8 +803,8 @@ button.mgz-btn {
 .mgz-builder-navigator .mgz-navigator-element {
   position: relative;
 }
-.mgz-builder-navigator .magezon-builder-directive-control_row_layout,
-.mgz-builder-navigator .magezon-builder-directive-control_navigator {
+.mgz-builder-navigator .cytracon-builder-directive-control_row_layout,
+.mgz-builder-navigator .cytracon-builder-directive-control_navigator {
   display: none;
 }
 .mgz-builder-navigator .mgz-navigator-element-list-toggle {
@@ -836,14 +836,14 @@ button.mgz-btn {
 .mgz-builder-navigator .mgz-element-hide-default .mgz-fa-eye-slash {
   display: inline;
 }
-.mgz-modal-navigator .magezon-builder-directive-modal_navigator_toggle i {
+.mgz-modal-navigator .cytracon-builder-directive-modal_navigator_toggle i {
   cursor: pointer;
   color: #FFF;
   position: relative;
   margin-right: 12px;
   font-size: 18px;
 }
-.mgz-modal-navigator .magezon-builder-directive-modal_navigator_toggle i:before {
+.mgz-modal-navigator .cytracon-builder-directive-modal_navigator_toggle i:before {
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -1531,7 +1531,7 @@ button.mgz-btn {
   display: table;
   clear: both;
 }
-.mgz-modal .magezon-builder-directive-modal_title {
+.mgz-modal .cytracon-builder-directive-modal_title {
   width: 100%;
 }
 .mgz-modal .mgz-modal-tab > .nav.nav-tabs {
@@ -1566,33 +1566,33 @@ button.mgz-btn {
 .mgz-modal .mgz-modal-tab > .nav.nav-tabs > li:hover:not(.active) > a {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.mgz-modal .magezon-builder-directive-modal_save,
-.mgz-modal .magezon-builder-directive-modal_yes {
+.mgz-modal .cytracon-builder-directive-modal_save,
+.mgz-modal .cytracon-builder-directive-modal_yes {
   margin-left: 8px;
 }
-.mgz-modal .magezon-builder-directive-modal_minimize {
+.mgz-modal .cytracon-builder-directive-modal_minimize {
   margin-right: 5px;
 }
-.mgz-modal .magezon-builder-directive-modal_minimize button {
+.mgz-modal .cytracon-builder-directive-modal_minimize button {
   padding: 0;
   margin: 0;
   background: none;
   border: 0;
   cursor: pointer;
 }
-.mgz-modal .magezon-builder-directive-modal_minimize button:hover i {
+.mgz-modal .cytracon-builder-directive-modal_minimize button:hover i {
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
 }
-.mgz-modal .magezon-builder-directive-modal_minimize i {
+.mgz-modal .cytracon-builder-directive-modal_minimize i {
   -webkit-opacity: 0.8;
   -moz-opacity: 0.8;
   opacity: 0.8;
   font-size: 26px;
   color: #FFF;
 }
-.mgz-modal .magezon-builder-directive-modal_minimize button {
+.mgz-modal .cytracon-builder-directive-modal_minimize button {
   -moz-transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
   -o-transition-duration: 0.2s;
@@ -1601,7 +1601,7 @@ button.mgz-btn {
   -o-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
-.mgz-modal .magezon-builder-directive-modal_minimize button.mgz-minimized {
+.mgz-modal .cytracon-builder-directive-modal_minimize button.mgz-minimized {
   -webkit-transform: scaleY(-1);
   -moz-transform: scaleY(-1);
   -ms-transform: scaleY(-1);
@@ -4493,7 +4493,7 @@ body > .ui-select-bootstrap.open {
 .mgz-builder .mgz-dropdown .mgz-dropdown-list > li:hover > a {
   background: #005780;
 }
-.mgz-builder .magezon-logo {
+.mgz-builder .cytracon-logo {
   background: url('../images/logo.svg') no-repeat center center;
   background-size: 35px;
 }
@@ -4542,10 +4542,10 @@ body > .ui-select-bootstrap.open {
 .mgz-fullscreen.mgz-builder-mode-xs .mgz-builder-content {
   width: 480px;
 }
-.magezon-builder-active-wrapper {
+.cytracon-builder-active-wrapper {
   display: block !important;
 }
-.magezon-builder-active-wrapper > .magezon-builder-active > .admin__field-control {
+.cytracon-builder-active-wrapper > .cytracon-builder-active > .admin__field-control {
   width: 100% !important;
 }
 .mgz-builder-grouped-wrapper > .admin__field-control,
