@@ -160,7 +160,7 @@ class DefaultConfigProvider implements ConfigProviderInterface
 
     public function getCacheKey()
     {
-    	return 'MAGEZON_BUILDER_CONFIG' . $this->getBuilderArea();
+    	return 'CYTRACON_BUILDER_CONFIG' . $this->getBuilderArea();
     }
 
 	/**

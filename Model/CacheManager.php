@@ -32,7 +32,7 @@ class CacheManager
     /**
      * Prefix for cache key of block
      */
-    const CACHE_KEY_PREFIX = 'MAGEZON_BUILDER_';
+    const CACHE_KEY_PREFIX = 'CYTRACON_BUILDER_';
 
     /**
      * @var CacheInterface
