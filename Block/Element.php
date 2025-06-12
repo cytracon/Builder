@@ -106,7 +106,7 @@ class Element extends ElementStyle implements ElementInterface
 		$httpContext   = ObjectManager::getInstance()->get(\Magento\Framework\App\Http\Context::class);
 		$priceCurrency = ObjectManager::getInstance()->get(\Magento\Framework\Pricing\PriceCurrencyInterface::class);
         return [
-			'MAGEZONBUILDERS_ELEMENT',
+			'CYTRACONBUILDERS_ELEMENT',
 			$priceCurrency->getCurrencySymbol(),
 			$this->_storeManager->getStore()->getId(),
 			$this->_design->getDesignTheme()->getId(),
