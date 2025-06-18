@@ -3,13 +3,25 @@ $elements      = $this->getElements();
 $customCss     = $block->getCustomCss();
 $customClasses = $this->getCustomClasses() ? ' ' . $this->getCustomClasses() : '';
 $html          = '';
+
+// Minify-Funktion
+function minifyCss($css) {
+    $css = preg_replace('!/\*.*?\*/!s', '', $css);
+    $css = preg_replace('/\n\s*\n/', "\n", $css);
+    $css = preg_replace('/[\n\r \t]/', ' ', $css);
+    $css = preg_replace('/ +/', ' ', $css);
+    $css = preg_replace('/ ?([,:;{}]) ?/', '$1', $css);
+    return trim($css);
+}
 ?>
 <?php foreach ($elements as $_element) {
-	$html .= $_element->toHtml();
+    $html .= $_element->toHtml();
 } ?>
 <?php if ($html) { ?>
 <div class="cytracon-builder cytracon-builder-preload<?= $customClasses ?>">
-	<?= $html ?>
-	<?php if ($customCss) { ?><style class="mgz-style"><?= $customCss ?></style><?php } ?>
+    <?= $html ?>
+    <?php if ($customCss) { ?>
+        <style class="mgz-style"><?= minifyCss($customCss) ?></style>
+    <?php } ?>
 </div>
 <?php } ?>

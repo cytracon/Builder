@@ -2,12 +2,24 @@
 $builderHelper = $this->helper('\Cytracon\Builder\Helper\Data');
 $rowInnerWidth = $builderHelper->getConfig('general/row_inner_width');
 $customCss     = $builderHelper->getConfig('customization/css');
+
+// Minify-Funktion
+function minifyCss($css) {
+    $css = preg_replace('!/\*.*?\*/!s', '', $css); // Remove comments
+    $css = preg_replace('/\n\s*\n/', "\n", $css);  // Remove empty lines
+    $css = preg_replace('/[\n\r \t]/', ' ', $css); // Remove new lines, tabs
+    $css = preg_replace('/ +/', ' ', $css);        // Remove multiple spaces
+    $css = preg_replace('/ ?([,:;{}]) ?/', '$1', $css); // Remove space around symbols
+    return trim($css);
+}
 ?>
 <?php if ($rowInnerWidth || $customCss) { ?>
 <style>
-	@media (min-width: <?= (int)$rowInnerWidth ?>px) {
-		.cytracon-builder .mgz-container {width: <?= $rowInnerWidth ?>;}
-	}
-	<?= $customCss ?>
+    <?php if ($rowInnerWidth): ?>
+    @media (min-width: <?= (int)$rowInnerWidth ?>px) {
+        .cytracon-builder .mgz-container {width: <?= $rowInnerWidth ?>;}
+    }
+    <?php endif; ?>
+    <?= minifyCss($customCss) ?>
 </style>
 <?php } ?>
